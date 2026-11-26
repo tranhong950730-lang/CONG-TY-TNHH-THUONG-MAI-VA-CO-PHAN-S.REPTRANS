@@ -20,10 +20,9 @@ public sealed class RandomNumberToolsTests
     }
 
     [TestMethod]
-    public void GetRandomNumber_EqualBounds_ThrowsArgumentOutOfRangeException()
+    public void GetRandomNumber_EqualBounds_ReturnsTheBound()
     {
-        Assert.ThrowsExactly<ArgumentOutOfRangeException>(
-            () => new RandomNumberTools().GetRandomNumber(5, 5));
+        Assert.AreEqual(5, new RandomNumberTools().GetRandomNumber(5, 5));
     }
 
     [TestMethod]
